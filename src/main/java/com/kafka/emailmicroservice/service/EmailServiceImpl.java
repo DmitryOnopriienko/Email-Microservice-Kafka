@@ -49,7 +49,7 @@ public class EmailServiceImpl implements EmailService {
     }
   }
 
-  @Scheduled(fixedRate = 5000)
+  @Scheduled(fixedRate = 300000)
   public void retrySending() {
     System.out.println("log:Scheduled:" + LocalDateTime.now());
     List<EmailEntity> entities = emailRepository.findAllByIsSentIsFalse();
